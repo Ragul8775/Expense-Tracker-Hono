@@ -1,10 +1,10 @@
 {
   "name": "backend",
-  "module": "index.ts",
+  "module": "server/index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun index.ts",
-    "dev": "bun --watch index.ts"
+    "start": "bun server/index.ts",
+    "dev": "bun --watch server/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.2.2",
+    "cors": "^2.8.5",
     "hono": "^4.5.8",
+    "pretty-json": "^0.1.1",
+    "prettyjson": "^1.2.5",
     "zod": "^3.23.8"
   }
 }

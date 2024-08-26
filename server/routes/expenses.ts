@@ -5,7 +5,7 @@ import { zValidator } from "@hono/zod-validator";
 export const expenseRoute = new Hono();
 
 type Expenses = z.infer<typeof expenseSchema>;
-const expenseSchema = z.object({
+export const expenseSchema = z.object({
   id: z.number().int().positive().min(1),
   title: z.string().min(3).max(100),
   amount: z.number().int().positive(),
