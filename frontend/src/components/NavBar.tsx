@@ -1,33 +1,20 @@
-import Link from "next/link";
 import React from "react";
 import BlurIn from "./magicui/blur-in";
-import WordPullUp from "./magicui/word-pull-up";
-import { Dock } from "./magicui/dock";
+import { DockDemo } from "./Dock";
 
-export type IconProps = React.HTMLAttributes<SVGElement>;
 const NavBar = () => {
-  const NavLinks = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "About",
-      href: "/about",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-    },
-  ];
   return (
-    <div className="flex items-center justify-around sm:mx-9 mx-4 w-full">
+    <div className="flex flex-col sm:flex-row items-center justify-between ">
       <BlurIn
         word="Expense Tracker"
-        className=" font-bold my-4 title_gradient"
+        className="font-bold my-4 title_gradient text-start"
       />
-      <div className="flex text-white items-start justify-between space-x-8 font-semibold">
-        <Dock />
+      {/* DockDemo will be at the bottom for small screens and inline for larger screens */}
+      <div className="sm:hidden fixed inset-x-0 bottom-4  py-2 text-white">
+        <DockDemo />
+      </div>
+      <div className="hidden sm:flex text-white items-center justify-between space-x-8 font-semibold">
+        <DockDemo />
       </div>
     </div>
   );

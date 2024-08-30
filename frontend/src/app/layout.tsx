@@ -4,6 +4,7 @@ import "../styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/dot-pattern";
+import { GlobalProvider } from "./context/GlobalContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-black">
-      <body className={inter.className}>
-        {children}{" "}
-        <DotPattern
-          className={cn("[mask-image:linear-gradient()] opacity-35 ")}
-        />
-      </body>
+      <GlobalProvider>
+        <body className={inter.className}>
+          {children}
+          <DotPattern
+            className={cn("[mask-image:linear-gradient()] opacity-35 ")}
+          />
+        </body>
+      </GlobalProvider>
     </html>
   );
 }

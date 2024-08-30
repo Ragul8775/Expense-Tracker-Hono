@@ -74,7 +74,7 @@
 
  
   .title_gradient {
-    @apply bg-gradient-to-r from-[#33261f]  to-[#9a8478] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#603813]  to-[#b29f94] bg-clip-text text-transparent;
   }
 }
 
